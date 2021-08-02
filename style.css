@@ -132,9 +132,7 @@ a:hover {
   text-align: center;
   vertical-align: middle;
 
-  transition: opacity 1.5s;
-  -webkit-transition: opacity 1.5s;
-  animation: 1.5s 0.33 fadeIn;
+  animation: 1.5s 1 fadeIn;
   /* Do the Fade. */
 
 }
@@ -149,7 +147,7 @@ a:hover {
   }
 
   to {
-    opacity: 0.33;
+    opacity: 1;
   }
 }
 

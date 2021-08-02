@@ -80,8 +80,8 @@
 		element.style.filter = 'alpha(opacity=90)'; // IE fallback
 
 		let animationDelay = 1000
+		let oldclick = click;
 		setTimeout(() => {
-			console.log(element.style.opacity)
 			element.style.opacity = 0;
 		}, animationDelay + 20);
 
@@ -89,23 +89,21 @@
 	}
 
 	function showMenu() {
-		document.getElementById('vinyl').style.display = "block";
-		document.getElementById('stream').style.display = "block";
-		document.getElementById('about').style.display = "block";
 
-		console.log(click)
 
-		let opacity = 1
-		if (click === 0) {
-			opacity = 0.33
+		if (click === 2) {
+			document.getElementById('vinyl').style.display = "block";
+			document.getElementById('stream').style.display = "block";
+			document.getElementById('about').style.display = "block";
+
+			let opacity = 1
+
+			document.getElementById('vinyl').style.opacity = opacity;
+			document.getElementById('stream').style.opacity = opacity;
+			document.getElementById('about').style.opacity = opacity;
 		}
-		if (click === 1) {
-			opacity = 0.66
-		}
 
-		document.getElementById('vinyl').style.opacity = opacity;
-		document.getElementById('stream').style.opacity = opacity;
-		document.getElementById('about').style.opacity = opacity;
+
 
 	}
 
@@ -118,9 +116,6 @@
 		changeImage();
 		impact();
 		showMenu();
-
-
-
 	});
 
 	// Events reset after mouse up
@@ -131,10 +126,10 @@
 		click = click + 1
 
 		if (click === 5) {
-			document.getElementById("imgClickAndChange").style.display="none";
+			document.getElementById("imgClickAndChange").style.display = "none";
 			document.getElementById('menu').style.display = "none";
 			document.getElementById('youtube-video').style.display = "block";
-			
+
 		}
 	});
 
@@ -143,10 +138,13 @@
 	document.getElementById("x").addEventListener('mousedown', e => {
 
 		changeCursor();
-		
+
 		document.getElementById('youtube-video').style.display = "none";
-		document.getElementById("imgClickAndChange").style.display="block";
+		document.getElementById("imgClickAndChange").style.display = "block";
 		document.getElementById('menu').style.display = "flex";
+		document.getElementById('menu').style.opacity = 1;
+		document.getElementById('menu').style.animation = "none";
+		document.getElementById('menu').style.transition = "none";
 
 	});
 
