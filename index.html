@@ -1,0 +1,86 @@
+<html>
+
+<head>
+	<title>RING THE BELL</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<div class="mainContainer">
+
+		<div class="imgContainer">
+
+			<img class="gif" src="assets/images/cropped_impactBell.gif" id="ondes" ;>
+			<img class="logo" src="assets/images/bell.png" id="imgClickAndChange" ; />
+
+
+
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
+
+<script>
+	var audio = new Audio('assets/sounds/bellringing.wav');
+
+
+	function changeImage() {
+		document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
+	}
+
+	function resetImage() {
+		document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
+	}
+
+
+	function changeCursor() {
+		document.body.style.cursor = "url('assets/images/handCursorClicked.cur'),auto";
+	}
+
+	function resetCursor() {
+		document.body.style.cursor = "url('assets/images/handCursor.cur'),auto";
+	}
+
+
+	function play() {
+
+		audio.play();
+	}
+
+
+	function impact() {
+		var element = document.getElementById('ondes');
+
+		element.style.opacity = 100;
+		element.style.filter = 'alpha(opacity=90)'; // IE fallback
+
+		let animationDelay = 1000
+		setTimeout(() => {
+			console.log(element.style.opacity)
+			element.style.opacity = 0;
+		}, animationDelay + 20);
+
+
+	}
+
+	// Events triggered on click
+
+	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
+		changeCursor();
+		changeImage();
+		play();
+		impact()
+	});
+
+	// Events reset after mouse up
+
+	document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
+		resetCursor();
+		resetImage();
+	});
+</script>
