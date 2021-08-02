@@ -3,31 +3,52 @@
 <head>
 	<title>RING THE BELL</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://unpkg.com/98.css">
 </head>
 
 <body>
 
+
+
+
 	<div class="mainContainer">
-		<div id = "leaf" class="leaf">
-			<div>BUILDUP</div>
-			<div>9.45</div>
-			<div id="satellite">SATELLITE ft. The Kount</div>
-			<div>ONEHUNDRED</div>
-			<div>MILES</div>
-			<div>LETSGO! ft. Sadtoi</div>
-			<div>LETGO ft. Mary</div>
-			<div>FLIP</div>
-			<div>THIRTYSEVEN</div>
-			<div>STRAINED</div>
+		<div id="leaf" class="leaf">
+			<div class="title-bar">BUILDUP</div>
+			<div class="title-bar">9.45</div>
+			<div id="satellite" class="title-bar">SATELLITE ft. The Kount</div>
+			<div class="title-bar">ONEHUNDRED</div>
+			<div class="title-bar">MILES</div>
+			<div class="title-bar">LETSGO! ft. Sadtoi</div>
+			<div class="title-bar">LETGO ft. Mary</div>
+			<div class="title-bar">FLIP</div>
+			<div class="title-bar">THIRTYSEVEN</div>
+			<div class="title-bar">STRAINED</div>
 		</div>
 
 		<div id="youtube-video" class="youtube-embed">
 
-			<iframe id="youtube-video-iframe" class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/yMuPq-mmMHQ"
-				title="YouTube video player" frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-			
+			<div class="window">
+				<div class="title-bar">
+					<div class="title-bar-text" style="font-size: 20;">Ring the bell</div>
+					<div class="title-bar-controls">
+						<button aria-label="Minimize"></button>
+						<button aria-label="Maximize"></button>
+						<button aria-label="Close"></button>
+					</div>
+
+				</div>
+				<div class="window-body">
+
+
+
+
+					<iframe id="youtube-video-iframe" class="youtube-video" width="560" height="315"
+						src="https://www.youtube.com/embed/yMuPq-mmMHQ" title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+				</div>
+			</div>
 		</div>
 
 
@@ -45,126 +66,113 @@
 
 
 		<div id="menu" class="menuContainer">
-			<div id="vinyl"><b>Vinyl</b></div>
-			<div id="stream"><b>Stream</b></div>
-			<div id="about"><b>About</b></div>
-		</div>
+			<div id="vinyl"><button><b>Vinyl</b></button></div>
+			<div id="stream"><button><b>Stream</b></button></div>
+			<div id="about"><button>><b>About</b></button</div> </div> </div> </body> </html> <script>
+					var audio = new Audio('assets/sounds/bellringing_trimmed.wav');
+					audio.preload = "auto"
+
+					var click = 0;
+
+
+					function changeImage() {
+					document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
+					}
+
+					function resetImage() {
+					document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
+					}
+
+
+					function changeCursor() {
+					document.body.style.cursor = "url('assets/images/handCursorClicked.cur'),auto";
+					}
+
+					function resetCursor() {
+					document.body.style.cursor = "url('assets/images/handCursor.cur'),auto";
+					}
+
+
+					function play() {
+					audio.pause()
+					audio.currentTime = 0;
+
+					audio.play();
+					}
+
+
+					function impact() {
+					var element = document.getElementById('ondes');
+
+					element.style.opacity = 100;
+					element.style.filter = 'alpha(opacity=90)'; // IE fallback
+
+					let animationDelay = 1000
+					let oldclick = click;
+					setTimeout(() => {
+					element.style.opacity = 0;
+					}, animationDelay + 20);
+
+
+					}
+
+					function showMenu() {
+
+
+					if (click === 2) {
+					document.getElementById('vinyl').style.display = "block";
+					document.getElementById('stream').style.display = "block";
+					document.getElementById('about').style.display = "block";
+
+					let opacity = 1
+
+					document.getElementById('vinyl').style.opacity = opacity;
+					document.getElementById('stream').style.opacity = opacity;
+					document.getElementById('about').style.opacity = opacity;
+					}
 
 
 
+					}
 
-	</div>
+					// BELL
+					// Events triggered on click
 
+					document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
+					play();
+					changeCursor();
+					changeImage();
+					impact();
+					showMenu();
+					});
 
-</body>
+					// Events reset after mouse up
 
-</html>
+					document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
+					resetCursor();
+					resetImage();
+					click = click + 1
 
-<script>
-	var audio = new Audio('assets/sounds/bellringing_trimmed.wav');
-	audio.preload = "auto"
+					if (click ===2) {
 
-	var click = 0;
+					document.getElementById('youtube-video').style.display = "block";
 
-
-	function changeImage() {
-		document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
-	}
-
-	function resetImage() {
-		document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
-	}
-
-
-	function changeCursor() {
-		document.body.style.cursor = "url('assets/images/handCursorClicked.cur'),auto";
-	}
-
-	function resetCursor() {
-		document.body.style.cursor = "url('assets/images/handCursor.cur'),auto";
-	}
+					}
+					if (click === 5) {
+					document.getElementById("leaf").style.display = "block";
 
 
-	function play() {
-		audio.pause()
-		audio.currentTime = 0;
-
-		audio.play();
-	}
+					}
+					})
 
 
-	function impact() {
-		var element = document.getElementById('ondes');
+					// Switch songs
 
-		element.style.opacity = 100;
-		element.style.filter = 'alpha(opacity=90)'; // IE fallback
+					document.getElementById("satellite").addEventListener('mousedown', e => {
 
-		let animationDelay = 1000
-		let oldclick = click;
-		setTimeout(() => {
-			element.style.opacity = 0;
-		}, animationDelay + 20);
+					document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
+
+					})
 
 
-	}
-
-	function showMenu() {
-
-
-		if (click === 2) {
-			document.getElementById('vinyl').style.display = "block";
-			document.getElementById('stream').style.display = "block";
-			document.getElementById('about').style.display = "block";
-
-			let opacity = 1
-
-			document.getElementById('vinyl').style.opacity = opacity;
-			document.getElementById('stream').style.opacity = opacity;
-			document.getElementById('about').style.opacity = opacity;
-		}
-
-
-
-	}
-
-	// BELL
-	// Events triggered on click
-
-	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
-		play();
-		changeCursor();
-		changeImage();
-		impact();
-		showMenu();
-	});
-
-	// Events reset after mouse up
-
-	document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
-		resetCursor();
-		resetImage();
-		click = click + 1
-
-		if (click ===2) {
-		
-			document.getElementById('youtube-video').style.display = "block";
-
-		}
-		if (click === 3) {
-			document.getElementById("leaf").style.display = "block";
-
-
-		}
-	})
-
-
-	// Switch songs
-
-	document.getElementById("satellite").addEventListener('mousedown', e => {
-
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
-
-	})
-	
-
-</script>
+					</script>
