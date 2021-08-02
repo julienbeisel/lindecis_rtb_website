@@ -11,13 +11,23 @@
 
 		<div class="imgContainer">
 
+
 			<img class="gif" src="assets/images/cropped_impactBell.gif" id="ondes" ;>
 			<img class="logo" src="assets/images/bell.png" id="imgClickAndChange" ; />
+			<div id="youtube-video" class="youtube-embed">
+				<button id="x">
+					X
+				</button>
+				<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/yMuPq-mmMHQ"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</div>
 
 
 
 		</div>
-		<div class="menuContainer">
+		<div id="menu" class="menuContainer">
 			<div id="vinyl">Vinyl</div>
 			<div id="stream">Stream</div>
 			<div id="about">About</div>
@@ -31,7 +41,10 @@
 </html>
 
 <script>
-	var audio = new Audio('assets/sounds/bellringing.wav');
+	var audio = new Audio('assets/sounds/bellringing_trimmed.wav');
+	audio.preload = "auto"
+
+	var click = 0;
 
 
 	function changeImage() {
@@ -53,6 +66,8 @@
 
 
 	function play() {
+		audio.pause()
+		audio.currentTime = 0;
 
 		audio.play();
 	}
@@ -77,16 +92,35 @@
 		document.getElementById('vinyl').style.display = "block";
 		document.getElementById('stream').style.display = "block";
 		document.getElementById('about').style.display = "block";
+
+		console.log(click)
+
+		let opacity = 1
+		if (click === 0) {
+			opacity = 0.33
+		}
+		if (click === 1) {
+			opacity = 0.66
+		}
+
+		document.getElementById('vinyl').style.opacity = opacity;
+		document.getElementById('stream').style.opacity = opacity;
+		document.getElementById('about').style.opacity = opacity;
+
 	}
 
+	// BELL
 	// Events triggered on click
 
 	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
+		play();
 		changeCursor();
 		changeImage();
-		play();
 		impact();
-		showMenu()
+		showMenu();
+
+
+
 	});
 
 	// Events reset after mouse up
@@ -94,5 +128,31 @@
 	document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
 		resetCursor();
 		resetImage();
+		click = click + 1
+
+		if (click === 5) {
+			document.getElementById("imgClickAndChange").style.display="none";
+			document.getElementById('menu').style.display = "none";
+			document.getElementById('youtube-video').style.display = "block";
+			
+		}
+	});
+
+	// YOUTUBE
+
+	document.getElementById("x").addEventListener('mousedown', e => {
+
+		changeCursor();
+		
+		document.getElementById('youtube-video').style.display = "none";
+		document.getElementById("imgClickAndChange").style.display="block";
+		document.getElementById('menu').style.display = "flex";
+
+	});
+
+	// Events reset after mouse up
+
+	document.getElementById("x").addEventListener('mouseup', e => {
+		resetCursor();
 	});
 </script>
