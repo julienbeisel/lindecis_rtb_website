@@ -18,9 +18,9 @@
 
 		</div>
 		<div class="menuContainer">
-			<div>Vinyl</div>
-			<div>Stream</div>
-			<div>About</div>
+			<div id="vinyl">Vinyl</div>
+			<div id="stream">Stream</div>
+			<div id="about">About</div>
 		</div>
 
 	</div>
@@ -73,13 +73,20 @@
 
 	}
 
+	function showMenu() {
+		document.getElementById('vinyl').style.display = "block";
+		document.getElementById('stream').style.display = "block";
+		document.getElementById('about').style.display = "block";
+	}
+
 	// Events triggered on click
 
 	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
 		changeCursor();
 		changeImage();
 		play();
-		impact()
+		impact();
+		showMenu()
 	});
 
 	// Events reset after mouse up
