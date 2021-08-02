@@ -237,12 +237,6 @@ font-size: 20;
   animation:fall 11s linear infinite ;
   animation-delay:-10s;
 }
-.leaf div:nth-child(11){
-  left:32%; 
-  top:40%;
-  animation:fall 20s linear infinite ;
-  animation-delay:-4s;
-}
 
 @keyframes fall{
   0%{
