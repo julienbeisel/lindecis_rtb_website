@@ -8,6 +8,20 @@
 <body>
 
 	<div class="mainContainer">
+		<div id = "leaf" class="leaf">
+			<div>L'INDECIS</div>
+			<div>RING THE BELL</div>
+			<div>L'INDECIS</div>
+			<div>RING THE BELL</div>
+			<div>L'INDECIS</div>
+			<div>RING THE BELL</div>
+			<div>L'INDECIS</div>
+			<div>RING THE BELL</div>
+			<div>L'INDECIS</div>
+			<div>RING THE BELL</div>
+			<div>L'INDECIS</div>
+		</div>
+
 
 		<div class="imgContainer">
 
@@ -28,10 +42,13 @@
 
 		</div>
 		<div id="menu" class="menuContainer">
-			<div id="vinyl">Vinyl</div>
-			<div id="stream">Stream</div>
-			<div id="about">About</div>
+			<div id="vinyl"><b>Vinyl</b></div>
+			<div id="stream"><b>Stream</b></div>
+			<div id="about"><b>About</b></div>
 		</div>
+
+
+
 
 	</div>
 
@@ -129,6 +146,11 @@
 			document.getElementById("imgClickAndChange").style.display = "none";
 			document.getElementById('menu').style.display = "none";
 			document.getElementById('youtube-video').style.display = "block";
+
+		}
+		if (click === 10) {
+			document.getElementById("leaf").style.display = "block";
+
 
 		}
 	});
