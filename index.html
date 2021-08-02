@@ -11,7 +11,7 @@
 		<div id = "leaf" class="leaf">
 			<div>BUILDUP</div>
 			<div>9.45</div>
-			<div id="special-song-title">SATELLITE ft. The Kount</div>
+			<div id="satellite">SATELLITE ft. The Kount</div>
 			<div>ONEHUNDRED</div>
 			<div>MILES</div>
 			<div>LETSGO! ft. Sadtoi</div>
@@ -21,25 +21,29 @@
 			<div>STRAINED</div>
 		</div>
 
+		<div id="youtube-video" class="youtube-embed">
+
+			<iframe id="youtube-video-iframe" class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/yMuPq-mmMHQ"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+			
+		</div>
+
 
 		<div class="imgContainer">
 
 
 			<img class="gif" src="assets/images/cropped_impactBell.gif" id="ondes" ;>
 			<img class="logo" src="assets/images/bell.png" id="imgClickAndChange" ; />
-			<div id="youtube-video" class="youtube-embed">
-				<button id="x">
-					X
-				</button>
-				<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/yMuPq-mmMHQ"
-					title="YouTube video player" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-			</div>
+
+
 
 
 
 		</div>
+
+
 		<div id="menu" class="menuContainer">
 			<div id="vinyl"><b>Vinyl</b></div>
 			<div id="stream"><b>Stream</b></div>
@@ -141,37 +145,26 @@
 		resetImage();
 		click = click + 1
 
-		if (click === 5) {
-			document.getElementById("imgClickAndChange").style.display = "none";
-			document.getElementById('menu').style.display = "none";
+		if (click ===2) {
+		
 			document.getElementById('youtube-video').style.display = "block";
 
 		}
-		if (click === 10) {
+		if (click === 3) {
 			document.getElementById("leaf").style.display = "block";
 
 
 		}
-	});
+	})
 
-	// YOUTUBE
 
-	document.getElementById("x").addEventListener('mousedown', e => {
+	// Switch songs
 
-		changeCursor();
+	document.getElementById("satellite").addEventListener('mousedown', e => {
 
-		document.getElementById('youtube-video').style.display = "none";
-		document.getElementById("imgClickAndChange").style.display = "block";
-		document.getElementById('menu').style.display = "flex";
-		document.getElementById('menu').style.opacity = 1;
-		document.getElementById('menu').style.animation = "none";
-		document.getElementById('menu').style.transition = "none";
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
 
-	});
+	})
+	
 
-	// Events reset after mouse up
-
-	document.getElementById("x").addEventListener('mouseup', e => {
-		resetCursor();
-	});
 </script>
