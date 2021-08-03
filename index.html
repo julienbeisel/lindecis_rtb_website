@@ -66,113 +66,117 @@
 
 
 		<div id="menu" class="menuContainer">
-			<div id="vinyl"><button><b>Vinyl</b></button></div>
-			<div id="stream"><button><b>Stream</b></button></div>
-			<div id="about"><button>><b>About</b></button</div> </div> </div> </body> </html> <script>
-					var audio = new Audio('assets/sounds/bellringing_trimmed.wav');
-					audio.preload = "auto"
+			<div id="vinyl"><button>Vinyl</button></div>
+			<div id="stream"><button>Stream</button></div>
+			<div id="about"><button>About</button></div>
+		</div>
+	</div>
+</body>
 
-					var click = 0;
+</html>
+<script>
+	var audio = new Audio('assets/sounds/bellringing_trimmed.wav');
+	audio.preload = "auto"
 
-
-					function changeImage() {
-					document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
-					}
-
-					function resetImage() {
-					document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
-					}
+	var click = 0;
 
 
-					function changeCursor() {
-					document.body.style.cursor = "url('assets/images/handCursorClicked.cur'),auto";
-					}
+	function changeImage() {
+		document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
+	}
 
-					function resetCursor() {
-					document.body.style.cursor = "url('assets/images/handCursor.cur'),auto";
-					}
-
-
-					function play() {
-					audio.pause()
-					audio.currentTime = 0;
-
-					audio.play();
-					}
+	function resetImage() {
+		document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
+	}
 
 
-					function impact() {
-					var element = document.getElementById('ondes');
+	function changeCursor() {
+		document.body.style.cursor = "url('assets/images/handCursorClicked.cur'),auto";
+	}
 
-					element.style.opacity = 100;
-					element.style.filter = 'alpha(opacity=90)'; // IE fallback
-
-					let animationDelay = 1000
-					let oldclick = click;
-					setTimeout(() => {
-					element.style.opacity = 0;
-					}, animationDelay + 20);
+	function resetCursor() {
+		document.body.style.cursor = "url('assets/images/handCursor.cur'),auto";
+	}
 
 
-					}
+	function play() {
+		audio.pause()
+		audio.currentTime = 0;
 
-					function showMenu() {
-
-
-					if (click === 2) {
-					document.getElementById('vinyl').style.display = "block";
-					document.getElementById('stream').style.display = "block";
-					document.getElementById('about').style.display = "block";
-
-					let opacity = 1
-
-					document.getElementById('vinyl').style.opacity = opacity;
-					document.getElementById('stream').style.opacity = opacity;
-					document.getElementById('about').style.opacity = opacity;
-					}
+		audio.play();
+	}
 
 
+	function impact() {
+		var element = document.getElementById('ondes');
 
-					}
+		element.style.opacity = 100;
+		element.style.filter = 'alpha(opacity=90)'; // IE fallback
 
-					// BELL
-					// Events triggered on click
-
-					document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
-					play();
-					changeCursor();
-					changeImage();
-					impact();
-					showMenu();
-					});
-
-					// Events reset after mouse up
-
-					document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
-					resetCursor();
-					resetImage();
-					click = click + 1
-
-					if (click ===2) {
-
-					document.getElementById('youtube-video').style.display = "block";
-
-					}
-					if (click === 6) {
-					document.getElementById("leaf").style.display = "block";
+		let animationDelay = 1000
+		let oldclick = click;
+		setTimeout(() => {
+			element.style.opacity = 0;
+		}, animationDelay + 20);
 
 
-					}
-					})
+	}
+
+	function showMenu() {
 
 
-					// Switch songs
+		if (click === 2) {
+			document.getElementById('vinyl').style.display = "block";
+			document.getElementById('stream').style.display = "block";
+			document.getElementById('about').style.display = "block";
 
-					document.getElementById("satellite").addEventListener('mousedown', e => {
+			let opacity = 1
 
-					document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
+			document.getElementById('vinyl').style.opacity = opacity;
+			document.getElementById('stream').style.opacity = opacity;
+			document.getElementById('about').style.opacity = opacity;
+		}
 
-					})
 
 
-					</script>
+	}
+
+	// BELL
+	// Events triggered on click
+
+	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
+		play();
+		changeCursor();
+		changeImage();
+		impact();
+		showMenu();
+	});
+
+	// Events reset after mouse up
+
+	document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
+		resetCursor();
+		resetImage();
+		click = click + 1
+
+		if (click === 2) {
+
+			document.getElementById('youtube-video').style.display = "block";
+
+		}
+		if (click === 6) {
+			document.getElementById("leaf").style.display = "block";
+
+
+		}
+	})
+
+
+	// Switch songs
+
+	document.getElementById("satellite").addEventListener('mousedown', e => {
+
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
+
+	})
+</script>
