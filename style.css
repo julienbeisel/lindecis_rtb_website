@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   font-family: "bell-mt";
-  font-size: 40;
   color: #FFFFFF;
   text-shadow: 4px 3px 0 #7A7A7A;
 }
@@ -44,7 +43,7 @@ a:hover {
 
 .clock {
   position: absolute;
-  left: 85%;
+  left: 90%;
   top: 20%;
   transform: translate(-50%, -50%);
   font-size: 20;
@@ -53,9 +52,9 @@ a:hover {
 .youtube-embed {
   position: absolute;
   left: 50%;
-  top: 25%;
-  width: 40vw;
-  height: 40vh;
+  top: 30%;
+  width: 50vw;
+  height: 50vh;
   transform: translate(-50%, -50%);
   display: none;
 
@@ -100,10 +99,10 @@ a:hover {
 }
 
 .imgContainer {
-  position: relative;
+  position: absolute;
   display: flex;
   left: 50%;
-  top: 65%;
+  top: 75%;
   width: 40vh;
   height: 40vh;
   transform: translate(-50%, -50%);
@@ -112,9 +111,9 @@ a:hover {
 
 .menuContainer {
 
-  position: relative;
+  position: absolute;
   left: 50%;
-  top: 40%;
+  top: 90%;
   width: 40vw;
   height: 20vh;
   transform: translate(-50%, -50%);
@@ -144,6 +143,7 @@ a:hover {
 }
 
 .vinyl .stream .about {
+  height:100%;
   opacity: 0
 }
 
