@@ -9,20 +9,36 @@
 <body>
 
 
-
-
 	<div class="mainContainer">
+
+		<div class="window" style="position: absolute;
+		left: 85%;
+		top: 20%;
+		width:20vw;
+		transform: translate(-50%, -50%);
+		font-size: 20;">
+			<div class="title-bar">
+				<div class="title-bar-text" style="font-size: 20;">Clock</div>
+			</div>
+
+			<div id="clock" class="window-body" style="font-size: 20;">
+				<div id="value-clock" style="font-size: 20;">00:00</div>
+				<input id="input-pswrd" type="text" style="display:none" />
+			</div>
+		</div>
+
+
 		<div id="leaf" class="leaf">
-			<div class="title-bar">BUILDUP</div>
-			<div class="title-bar">9.45</div>
-			<div id="satellite" class="title-bar">SATELLITE ft. The Kount</div>
-			<div class="title-bar">ONEHUNDRED</div>
-			<div class="title-bar">MILES</div>
-			<div class="title-bar">LETSGO! ft. Sadtoi</div>
-			<div class="title-bar">LETGO ft. Mary</div>
-			<div class="title-bar">FLIP</div>
-			<div class="title-bar">THIRTYSEVEN</div>
-			<div class="title-bar">STRAINED</div>
+			<div id="song-buildup">BUILDUP</div>
+			<div id="song-945">9.45</div>
+			<div id="song-satellite">SATELLITE ft. The Kount</div>
+			<div id="song-onehundred">ONEHUNDRED</div>
+			<div id="song-miles">MILES</div>
+			<div id="song-letsgo">LETSGO! ft. Sadtoi</div>
+			<div id="song-letgo">LETGO ft. Mary</div>
+			<div id="song-flip">FLIP</div>
+			<div id="song-thirtyseven">THIRTYSEVEN</div>
+			<div id="song-strained">STRAINED</div>
 		</div>
 
 		<div id="youtube-video" class="youtube-embed">
@@ -38,12 +54,8 @@
 
 				</div>
 				<div class="window-body">
-
-
-
-
 					<iframe id="youtube-video-iframe" class="youtube-video" width="560" height="315"
-						src="https://www.youtube.com/embed/yMuPq-mmMHQ" title="YouTube video player" frameborder="0"
+						src="https://www.youtube.com/embed/hJCW9YI2r0k" title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
 
@@ -70,6 +82,7 @@
 			<div id="stream"><button>Stream</button></div>
 			<div id="about"><button>About</button></div>
 		</div>
+
 	</div>
 </body>
 
@@ -79,6 +92,11 @@
 	audio.preload = "auto"
 
 	var click = 0;
+
+	var DEFAULT_VIDEO = "https://www.youtube.com/embed/hJCW9YI2r0k"
+
+
+	var current_hour = 0
 
 
 	function changeImage() {
@@ -118,8 +136,6 @@
 		setTimeout(() => {
 			element.style.opacity = 0;
 		}, animationDelay + 20);
-
-
 	}
 
 	function showMenu() {
@@ -137,6 +153,34 @@
 			document.getElementById('about').style.opacity = opacity;
 		}
 
+	}
+
+	function update_hour(hour) {
+
+		hour = hour + 15
+
+		if (hour > 60 * 12) {
+			hour = 0
+		}
+
+		return (hour)
+	}
+
+	function display_hour() {
+
+		let hours = Math.floor(current_hour / 60, 0)
+		let minutes = current_hour - hours * 60
+
+		let txt_to_display = String(hours).padStart(2, "0") + ":" + minutes
+
+		if (current_hour == 60 * 9 + 45) {
+			document.getElementById("input-pswrd").style.display = 'block'
+		}
+		else {
+			document.getElementById("input-pswrd").style.display = 'none'
+		}
+		document.getElementById("value-clock").innerHTML = txt_to_display
+
 
 
 	}
@@ -150,6 +194,8 @@
 		changeImage();
 		impact();
 		showMenu();
+		current_hour = update_hour(current_hour)
+		display_hour();
 	});
 
 	// Events reset after mouse up
@@ -160,23 +206,41 @@
 		click = click + 1
 
 		if (click === 2) {
-
 			document.getElementById('youtube-video').style.display = "block";
-
 		}
 		if (click === 6) {
 			document.getElementById("leaf").style.display = "block";
-
-
 		}
 	})
 
 
 	// Switch songs
 
-	document.getElementById("satellite").addEventListener('mousedown', e => {
-
+	document.getElementById("song-buildup").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/LwgCbCX11GQ"
+	})
+	document.getElementById("song-945").addEventListener('mousedown', e => {
+	})
+	document.getElementById("song-satellite").addEventListener('mousedown', e => {
 		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
-
+	})
+	document.getElementById("song-onehundred").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/54rR6hcvXHw"
+	})
+	document.getElementById("song-miles").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/MN87j1h1x-w"
+	})
+	document.getElementById("song-letsgo").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/KIwon8eIANw"
+	})
+	document.getElementById("song-letgo").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/DbGevmnbtLk"
+	})
+	document.getElementById("song-flip").addEventListener('mousedown', e => {
+	})
+	document.getElementById("song-thirtyseven").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
+	})
+	document.getElementById("song-strained").addEventListener('mousedown', e => {
 	})
 </script>
