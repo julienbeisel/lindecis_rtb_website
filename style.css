@@ -194,7 +194,7 @@ img.gif {
   top: 0;
   left: 0;
   font-family: "bell-mt";
-  font-size: x-large;
+  font-size:30;
   color: whitesmoke;
 
 }
@@ -202,6 +202,7 @@ img.gif {
 .leaf div {
   position: absolute;
   display: block;
+  opacity:0.8;
 }
 
 .leaf div:nth-child(1) {
