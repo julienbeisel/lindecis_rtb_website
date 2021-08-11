@@ -194,7 +194,7 @@ img.gif {
   top: 0;
   left: 0;
   font-family: "bell-mt";
-  font-size: medium;
+  font-size: x-large;
   color: whitesmoke;
 
 }
@@ -202,7 +202,6 @@ img.gif {
 .leaf div {
   position: absolute;
   display: block;
-  font-size: 20;
 }
 
 .leaf div:nth-child(1) {
@@ -251,13 +250,13 @@ img.gif {
 }
 
 .leaf div:nth-child(8) {
-  left: 34%;
+  left: 78%;
   animation: fall 4s linear infinite;
-  animation-delay: -7s;
+  animation-delay: -9s;
 }
 
 .leaf div:nth-child(9) {
-  left: 37%;
+  left: 71%;
   top: 80%;
   animation: fall 6s linear infinite;
   animation-delay: -4s;
