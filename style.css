@@ -114,6 +114,7 @@ body {
   width: 40vh;
   height: 40vh;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 
 }
 
@@ -170,6 +171,7 @@ img.logo {
   height: auto;
   top: 20%;
   left: 20%;
+  pointer-events: auto; 
 }
 
 img.gif {
