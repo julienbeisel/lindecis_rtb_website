@@ -13,16 +13,16 @@
 	<div class="mainContainer">
 
 		<div id="leaf" class="leaf">
-			<div id="song-buildup">BUILDUP.WAV⏎</div>
-			<div id="song-945">9.45.WAV⏎</div>
-			<div id="song-satellite">SATELLITE.WAV⏎</div>
-			<div id="song-onehundred">ONEHUNDRED.WAV⏎</div>
-			<div id="song-miles">MILES.WAV⏎</div>
-			<div id="song-letsgo">LETSGO.WAV!⏎</div>
-			<div id="song-letgo">LETGO.WAV⏎</div>
-			<div id="song-flip">FLIP.WAV⏎</div>
-			<div id="song-thirtyseven">THIRTYSEVEN.WAV⏎</div>
-			<div id="song-strained">STRAINED.WAV⏎</div>
+			<div id="song-buildup">BUILDUP.WAV</div>
+			<div id="song-945">9.45.WAV</div>
+			<div id="song-satellite">SATELLITE.WAV</div>
+			<div id="song-onehundred">ONEHUNDRED.WAV</div>
+			<div id="song-miles">MILES.WAV</div>
+			<div id="song-letsgo">LETSGO.WAV!</div>
+			<div id="song-letgo">LETGO.WAV</div>
+			<div id="song-flip">FLIP.WAV</div>
+			<div id="song-thirtyseven">THIRTYSEVEN.WAV</div>
+			<div id="song-strained">STRAINED.WAV</div>
 		</div>
 
 		<div class="imgContainer">
@@ -96,7 +96,7 @@
 			<div id=" clock" class="window-body" style="font-size: 20;">
 					<div id="value-clock" style="font-size: 20;">00:00</div>
 					<input id="input-pswrd" type="text" style="display:none" />
-					<button id="input-button" onclick="check_result()">Did you find it?</button>
+					<button id="input-button" onclick="check_result()">Password</button>
 				</div>
 			</div>
 
@@ -165,7 +165,16 @@
 
 	function display_about() {
 
-		document.getElementById("about-display").style.display = "block";
+		if (document.getElementById("about-display").style.display === "none") {
+			document.getElementById("about-display").style.display = "block";
+		}
+		else {
+			document.getElementById("about-display").style.display = "none";
+		}
+
+
+
+
 
 	}
 
@@ -217,7 +226,7 @@
 	function showMenu() {
 
 
-		if (click === 4) {
+		if (click === 2) {
 			document.getElementById('vinyl').style.display = "block";
 			document.getElementById('stream').style.display = "block";
 			document.getElementById('about').style.display = "block";
@@ -309,7 +318,7 @@
 		resetImage();
 		click = click + 1
 
-		if (click === 2) {
+		if (click === 4) {
 			document.getElementById('youtube-video').style.display = "block";
 		}
 		if (click === 6) {
