@@ -208,6 +208,11 @@ img.gif {
   cursor: url('assets/images/handCursorV2.cur'), auto;
 }
 
+.imgleaf{
+  width:2vw; 
+  margin:auto;
+  display:block;
+}
 
 .leaf {
   display: block;
