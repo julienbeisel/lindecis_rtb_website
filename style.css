@@ -122,9 +122,9 @@ body {
 
   position: absolute;
   left: 50%;
-  top: 90%;
+  top: 91%;
   width: 40vw;
-  height: 20vh;
+  height: 15vh;
   transform: translate(-50%, -50%);
 
   -webkit-justify-content: center;
@@ -330,4 +330,32 @@ img.gif {
     top: 90%;
     transform: translateX (-20px)
   }
+}
+
+
+.btn {
+  color:inherit;
+    font-family:inherit;
+  font-size: inherit;
+  background: white;
+  padding: 0.3rem 3.4rem;
+  border: 3px solid black;
+  margin-right: 2.6rem;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+}
+
+.btn:last-child {
+  margin: 0;
+}
+
+.btn:hover {
+  cursor: url('assets/images/handCursorV2.cur'), auto;
+  box-shadow: 0.4rem 0.4rem 0 black;
+  transform: translate(-0.4rem, -0.4rem);
+}
+
+.btn:active {
+  box-shadow: 0 0 0 black;
+  transform: translate(0, 0);
 }
