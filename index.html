@@ -4,6 +4,7 @@
 	<title>RING THE BELL</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://unpkg.com/98.css">
+	<meta charset="utf-8" />
 </head>
 
 <body>
@@ -12,16 +13,16 @@
 	<div class="mainContainer">
 
 		<div id="leaf" class="leaf">
-			<div id="song-buildup">BUILDUP</div>
-			<div id="song-945">9.45</div>
-			<div id="song-satellite">SATELLITE ft. The Kount</div>
-			<div id="song-onehundred">ONEHUNDRED</div>
-			<div id="song-miles">MILES</div>
-			<div id="song-letsgo">LETSGO! ft. Sadtoi</div>
-			<div id="song-letgo">LETGO ft. Mary</div>
-			<div id="song-flip">FLIP</div>
-			<div id="song-thirtyseven">THIRTYSEVEN</div>
-			<div id="song-strained">STRAINED</div>
+			<div id="song-buildup">BUILDUP.WAV⏎</div>
+			<div id="song-945">9.45.WAV⏎</div>
+			<div id="song-satellite">SATELLITE.WAV⏎</div>
+			<div id="song-onehundred">ONEHUNDRED.WAV⏎</div>
+			<div id="song-miles">MILES.WAV⏎</div>
+			<div id="song-letsgo">LETSGO.WAV!⏎</div>
+			<div id="song-letgo">LETGO.WAV⏎</div>
+			<div id="song-flip">FLIP.WAV⏎</div>
+			<div id="song-thirtyseven">THIRTYSEVEN.WAV⏎</div>
+			<div id="song-strained">STRAINED.WAV⏎</div>
 		</div>
 
 		<div class="imgContainer">
@@ -254,6 +255,12 @@
 	// Events triggered on click
 
 	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
+
+		document.getElementById('imgClickAndChange').classList.add('anim')
+		setTimeout(() => {
+			document.getElementById('imgClickAndChange').classList.remove('anim')
+		}, 1000);
+
 		play();
 		changeCursor();
 		changeImage();
@@ -275,7 +282,44 @@
 			document.getElementById('youtube-video').style.display = "block";
 		}
 		if (click === 6) {
-			document.getElementById("leaf").style.display = "block";
+			console.log(document.getElementById("song-buildup").style)
+			document.getElementById("song-buildup").style.display = "block";
+		}
+
+		if (click === 7) {
+			document.getElementById("song-945").style.display = "block";
+		}
+
+		if (click === 8) {
+			document.getElementById("song-satellite").style.display = "block";
+		}
+
+		if (click === 9) {
+			document.getElementById("song-onehundred").style.display = "block";
+		}
+
+		if (click === 10) {
+			document.getElementById("song-miles").style.display = "block";
+		}
+
+		if (click === 11) {
+			document.getElementById("song-letsgo").style.display = "block";
+		}
+
+		if (click === 12) {
+			document.getElementById("song-letgo").style.display = "block";
+		}
+
+		if (click === 13) {
+			document.getElementById("song-flip").style.display = "block";
+		}
+
+		if (click === 14) {
+			document.getElementById("song-thirtyseven").style.display = "block";
+		}
+
+		if (click === 15) {
+			document.getElementById("song-strained").style.display = "block";
 		}
 	})
 
@@ -309,10 +353,10 @@
 		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/DbGevmnbtLk"
 		hide_about()
 	})
-	document.getElementById("song-flip").addEventListener('mousedown', e => {})
+	document.getElementById("song-flip").addEventListener('mousedown', e => { })
 	document.getElementById("song-thirtyseven").addEventListener('mousedown', e => {
 		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/hJCW9YI2r0k"
 		hide_about()
 	})
-	document.getElementById("song-strained").addEventListener('mousedown', e => {})
+	document.getElementById("song-strained").addEventListener('mousedown', e => { })
 </script>
