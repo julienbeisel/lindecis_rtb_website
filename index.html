@@ -69,6 +69,8 @@
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
 
+					<img id="flip-image" class="youtube-video" style="display:none" src="assets/images/flip.jpg"></img>
+
 				</div>
 			</div>
 		</div>
@@ -94,6 +96,7 @@
 			<div id=" clock" class="window-body" style="font-size: 20;">
 					<div id="value-clock" style="font-size: 20;">00:00</div>
 					<input id="input-pswrd" type="text" style="display:none" />
+					<button id="input-button" onclick="check_result()">Did you find it?</button>
 				</div>
 			</div>
 
@@ -185,10 +188,16 @@
 
 
 	function play() {
-		audio.pause()
-		audio.currentTime = 0;
+		if (!audio.paused) {
 
-		audio.play();
+			audio.cloneNode(true).play();
+
+		} else {
+			audio.pause()
+			audio.currentTime = 0;
+			audio.play();
+		}
+
 	}
 
 
@@ -208,7 +217,7 @@
 	function showMenu() {
 
 
-		if (click === 2) {
+		if (click === 4) {
 			document.getElementById('vinyl').style.display = "block";
 			document.getElementById('stream').style.display = "block";
 			document.getElementById('about').style.display = "block";
@@ -242,13 +251,35 @@
 
 		if (current_hour == 60 * 9 + 45) {
 			document.getElementById("input-pswrd").style.display = 'block'
+			document.getElementById("input-button").style.display = 'block'
 		} else {
 			document.getElementById("input-pswrd").style.display = 'none'
+			document.getElementById("input-button").style.display = 'none'
 		}
 		document.getElementById("value-clock").innerHTML = txt_to_display
 
+	}
+
+	function check_result() {
+
+		if (document.getElementById("input-pswrd").value == 261093) {
+
+			let value = "contactme@gmail.com"
+
+			document.getElementById("song-buildup").innerHTML = value
+			document.getElementById("song-945").innerHTML = value
+			document.getElementById("song-satellite").innerHTML = value
+			document.getElementById("song-onehundred").innerHTML = value
+			document.getElementById("song-miles").innerHTML = value
+			document.getElementById("song-letsgo").innerHTML = value
+			document.getElementById("song-letgo").innerHTML = value
+			document.getElementById("song-flip").innerHTML = value
+			document.getElementById("song-thirtyseven").innerHTML = value
+			document.getElementById("song-strained").innerHTML = value
 
 
+
+		}
 	}
 
 	// BELL
@@ -321,6 +352,9 @@
 		if (click === 15) {
 			document.getElementById("song-strained").style.display = "block";
 		}
+		if (click === 8) {
+			document.getElementById('youtube-video').style.display = "block";
+		}
 	})
 
 
@@ -353,7 +387,17 @@
 		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/DbGevmnbtLk"
 		hide_about()
 	})
-	document.getElementById("song-flip").addEventListener('mousedown', e => { })
+	document.getElementById("song-flip").addEventListener('mousedown', e => {
+		document.getElementById("youtube-video-iframe").style.display = "none"
+		document.getElementById("flip-image").style.display = "block"
+
+		setTimeout(function () {
+			document.getElementById("flip-image").style.display = "none"
+			document.getElementById("youtube-video-iframe").style.display = "block"
+
+		}, 3000);
+
+	})
 	document.getElementById("song-thirtyseven").addEventListener('mousedown', e => {
 		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/hJCW9YI2r0k"
 		hide_about()
