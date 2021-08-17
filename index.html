@@ -213,8 +213,25 @@
 <script>
 
 	$(document).ready(function () {
+
+
+		function remove() {
+			$(temp).remove();
+		}
+
+		function achievement(filename) {
+			achievementSound.play();
+			$('<div id="temp" class="ani_div">' +
+				'<img src="' + filename + '" style="width:100%;height:100%">' + 'test' +
+				'</div>').appendTo(divEl);
+			setTimeout(function () {
+				remove()
+			}, 2950);
+		}
+
+
 		var audio = new Audio('assets/sounds/bellringing_trimmed.mp3');
-		var achievementSound = new Audio('assets/sounds/achievement.wav');
+		var achievementSound = new Audio('assets/sounds/achievement.mp3');
 
 		var divEl = $('.ach-area');
 
@@ -236,7 +253,7 @@
 			document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
 		}
 
-		function display_about() {
+		window.display_about = function () {
 
 			if (document.getElementById("about-display").style.display === "none") {
 				document.getElementById("about-display").style.display = "block";
@@ -336,35 +353,7 @@
 
 		}
 
-		function check_result() {
 
-			if (current_hour == 60 * 9 + 45) {
-				if (document.getElementById("input-pswrd").value == 261093) {
-
-
-					let value = "contactme@gmail.com"
-
-					document.getElementById("song-buildup").innerHTML = value
-					document.getElementById("song-945").innerHTML = value
-					document.getElementById("song-satellite").innerHTML = value
-					document.getElementById("song-onehundred").innerHTML = value
-					document.getElementById("song-miles").innerHTML = value
-					document.getElementById("song-letsgo").innerHTML = value
-					document.getElementById("song-letgo").innerHTML = value
-					document.getElementById("song-flip").innerHTML = value
-					document.getElementById("song-thirtyseven").innerHTML = value
-					document.getElementById("song-strained").innerHTML = value
-
-
-
-				}
-				else {
-					document.getElementById("result_password").innerHTML = "Wrong password"
-				}
-			} else {
-				document.getElementById("result_password").innerHTML = "Looks like it's not the time to do so..."
-			}
-		}
 
 
 		// BELL
@@ -441,15 +430,15 @@
 				document.getElementById('youtube-video').style.display = "block";
 			}
 
-			if (click === 5) {
-				achievement("assets/images/achievement50.jpg")
+			if (click === 25) {
+				achievement("assets/images/achievement1.jpg")
 			}
 
-			if (click === 10) {
-				achievement("assets/images/achievement100.jpg")
-			}
 			if (click === 50) {
-				achievement("assets/images/achievement500.jpg")
+				achievement("assets/images/achievement2.jpg")
+			}
+			if (click === 150) {
+				achievement("assets/images/achievement3.jpg")
 			}
 		})
 
@@ -502,19 +491,37 @@
 			document.getElementById("password").style.display = "block"
 		})
 
-		function remove() {
-			$(temp).remove();
-		}
+		window.check_result = function () {
 
-		function achievement(filename) {
-			achievementSound.play();
-			$('<div id="temp" class="ani_div">' +
-				'<img src="' + filename + '" style="width:100%;height:100%">' + 'test' +
-				'</div>').appendTo(divEl);
-			setTimeout(function () {
-				remove()
-			}, 2950);
+			if (current_hour == 60 * 9 + 45) {
+				if (document.getElementById("input-pswrd").value == 261093) {
+
+
+					let value = "ringthebell674@gmail.com"
+
+					document.getElementById("song-buildup").innerHTML = value
+					document.getElementById("song-945").innerHTML = value
+					document.getElementById("song-satellite").innerHTML = value
+					document.getElementById("song-onehundred").innerHTML = value
+					document.getElementById("song-miles").innerHTML = value
+					document.getElementById("song-letsgo").innerHTML = value
+					document.getElementById("song-letgo").innerHTML = value
+					document.getElementById("song-flip").innerHTML = value
+					document.getElementById("song-thirtyseven").innerHTML = value
+					document.getElementById("song-strained").innerHTML = value
+
+
+
+				}
+				else {
+					document.getElementById("result_password").innerHTML = "Wrong password"
+				}
+			} else {
+				document.getElementById("result_password").innerHTML = "Looks like it's not the time to do so..."
+			}
 		}
 	})
+
+
 
 </script>
