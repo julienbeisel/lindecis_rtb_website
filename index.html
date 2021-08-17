@@ -210,307 +210,310 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
-	var audio = new Audio('assets/sounds/bellringing_trimmed.mp3');
-	var achievementSound = new Audio('assets/sounds/achievement.wav');
 
-	var divEl = $('.ach-area');
+	$(document).ready(function () {
+		var audio = new Audio('assets/sounds/bellringing_trimmed.mp3');
+		var achievementSound = new Audio('assets/sounds/achievement.wav');
 
-	audio.preload = "auto"
+		var divEl = $('.ach-area');
 
-	var click = 0;
+		audio.preload = "auto"
 
-	var DEFAULT_VIDEO = "https://www.youtube.com/embed/hJCW9YI2r0k"
+		var click = 0;
+
+		var DEFAULT_VIDEO = "https://www.youtube.com/embed/hJCW9YI2r0k"
 
 
-	var current_hour = 0
+		var current_hour = 0
 
 
-	function changeImage() {
-		document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
-	}
-
-	function resetImage() {
-		document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
-	}
-
-	function display_about() {
-
-		if (document.getElementById("about-display").style.display === "none") {
-			document.getElementById("about-display").style.display = "block";
-		}
-		else {
-			document.getElementById("about-display").style.display = "none";
+		function changeImage() {
+			document.getElementById("imgClickAndChange").src = "assets/images/bellPush.png";
 		}
 
-
-
-
-
-	}
-
-	function hide_about() {
-
-		document.getElementById("about-display").style.display = "none";
-
-	}
-
-
-
-	function changeCursor() {
-
-		document.body.style.cursor = "url('assets/images/handCursorClickedV2.cur'),auto";
-	}
-
-	function resetCursor() {
-		document.body.style.cursor = "url('assets/images/handCursorV2.cur'),auto";
-	}
-
-
-	function play() {
-		if (!audio.paused) {
-
-			audio.cloneNode(true).play();
-
-		} else {
-			audio.pause()
-			audio.currentTime = 0;
-			audio.play();
+		function resetImage() {
+			document.getElementById("imgClickAndChange").src = "assets/images/bell.png";
 		}
 
-	}
+		function display_about() {
 
-
-	function impact() {
-		var element = document.getElementById('ondes');
-
-		element.style.opacity = 100;
-		element.style.filter = 'alpha(opacity=90)'; // IE fallback
-
-		let animationDelay = 1000
-		let oldclick = click;
-		setTimeout(() => {
-			element.style.opacity = 0;
-		}, animationDelay + 20);
-	}
-
-	function showMenu() {
-
-
-		if (click === 2) {
-			document.getElementById('vinyl').style.display = "block";
-			document.getElementById('stream').style.display = "block";
-			document.getElementById('about').style.display = "block";
-
-			let opacity = 1
-
-			document.getElementById('vinyl').style.opacity = opacity;
-			document.getElementById('stream').style.opacity = opacity;
-			document.getElementById('about').style.opacity = opacity;
-		}
-
-	}
-
-	function update_hour(hour) {
-
-		hour = hour + 15
-
-		if (hour > 60 * 12) {
-			hour = 0
-		}
-
-		return (hour)
-	}
-
-	function display_hour() {
-
-		let hours = Math.floor(current_hour / 60, 0)
-		let minutes = current_hour - hours * 60
-
-		let txt_to_display = String(hours).padStart(2, "0") + ":" + minutes
-
-
-		document.getElementById("value-clock").innerHTML = txt_to_display
-
-	}
-
-	function check_result() {
-
-		if (current_hour == 60 * 9 + 45) {
-			if (document.getElementById("input-pswrd").value == 261093) {
-
-
-				let value = "contactme@gmail.com"
-
-				document.getElementById("song-buildup").innerHTML = value
-				document.getElementById("song-945").innerHTML = value
-				document.getElementById("song-satellite").innerHTML = value
-				document.getElementById("song-onehundred").innerHTML = value
-				document.getElementById("song-miles").innerHTML = value
-				document.getElementById("song-letsgo").innerHTML = value
-				document.getElementById("song-letgo").innerHTML = value
-				document.getElementById("song-flip").innerHTML = value
-				document.getElementById("song-thirtyseven").innerHTML = value
-				document.getElementById("song-strained").innerHTML = value
-
-
-
+			if (document.getElementById("about-display").style.display === "none") {
+				document.getElementById("about-display").style.display = "block";
 			}
 			else {
-				document.getElementById("result_password").innerHTML = "Wrong password"
+				document.getElementById("about-display").style.display = "none";
 			}
-		} else {
-			document.getElementById("result_password").innerHTML = "Looks like it's not the time to do so..."
-		}
-	}
 
 
-	// BELL
-	// Events triggered on click
 
-	document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
 
-		document.getElementById('imgClickAndChange').classList.add('anim')
-		setTimeout(() => {
-			document.getElementById('imgClickAndChange').classList.remove('anim')
-		}, 1000);
 
-		play();
-		changeCursor();
-		changeImage();
-		impact();
-		showMenu();
-		current_hour = update_hour(current_hour)
-		display_hour();
-		hide_about()
-	});
-
-	// Events reset after mouse up
-
-	document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
-		resetCursor();
-		resetImage();
-		click = click + 1
-
-		if (click === 4) {
-			document.getElementById('youtube-video').style.display = "block";
-		}
-		if (click === 6) {
-			console.log(document.getElementById("song-buildup").style)
-			document.getElementById("song-buildup").style.display = "block";
 		}
 
-		if (click === 7) {
-			document.getElementById("song-945").style.display = "block";
+		function hide_about() {
+
+			document.getElementById("about-display").style.display = "none";
+
 		}
 
-		if (click === 8) {
-			document.getElementById("song-satellite").style.display = "block";
+
+
+		function changeCursor() {
+
+			document.body.style.cursor = "url('assets/images/handCursorClickedV2.cur'),auto";
 		}
 
-		if (click === 9) {
-			document.getElementById("song-onehundred").style.display = "block";
+		function resetCursor() {
+			document.body.style.cursor = "url('assets/images/handCursorV2.cur'),auto";
 		}
 
-		if (click === 10) {
-			document.getElementById("song-miles").style.display = "block";
+
+		function play() {
+			if (!audio.paused) {
+
+				audio.cloneNode(true).play();
+
+			} else {
+				audio.pause()
+				audio.currentTime = 0;
+				audio.play();
+			}
+
 		}
 
-		if (click === 11) {
-			document.getElementById("song-letsgo").style.display = "block";
+
+		function impact() {
+			var element = document.getElementById('ondes');
+
+			element.style.opacity = 100;
+			element.style.filter = 'alpha(opacity=90)'; // IE fallback
+
+			let animationDelay = 1000
+			let oldclick = click;
+			setTimeout(() => {
+				element.style.opacity = 0;
+			}, animationDelay + 20);
 		}
 
-		if (click === 12) {
-			document.getElementById("song-letgo").style.display = "block";
+		function showMenu() {
+
+
+			if (click === 2) {
+				document.getElementById('vinyl').style.display = "block";
+				document.getElementById('stream').style.display = "block";
+				document.getElementById('about').style.display = "block";
+
+				let opacity = 1
+
+				document.getElementById('vinyl').style.opacity = opacity;
+				document.getElementById('stream').style.opacity = opacity;
+				document.getElementById('about').style.opacity = opacity;
+			}
+
 		}
 
-		if (click === 13) {
-			document.getElementById("song-flip").style.display = "block";
+		function update_hour(hour) {
+
+			hour = hour + 15
+
+			if (hour > 60 * 12) {
+				hour = 0
+			}
+
+			return (hour)
 		}
 
-		if (click === 14) {
-			document.getElementById("song-thirtyseven").style.display = "block";
+		function display_hour() {
+
+			let hours = Math.floor(current_hour / 60, 0)
+			let minutes = current_hour - hours * 60
+
+			let txt_to_display = String(hours).padStart(2, "0") + ":" + minutes
+
+
+			document.getElementById("value-clock").innerHTML = txt_to_display
+
 		}
 
-		if (click === 15) {
-			document.getElementById("song-strained").style.display = "block";
-		}
-		if (click === 8) {
-			document.getElementById('youtube-video').style.display = "block";
+		function check_result() {
+
+			if (current_hour == 60 * 9 + 45) {
+				if (document.getElementById("input-pswrd").value == 261093) {
+
+
+					let value = "contactme@gmail.com"
+
+					document.getElementById("song-buildup").innerHTML = value
+					document.getElementById("song-945").innerHTML = value
+					document.getElementById("song-satellite").innerHTML = value
+					document.getElementById("song-onehundred").innerHTML = value
+					document.getElementById("song-miles").innerHTML = value
+					document.getElementById("song-letsgo").innerHTML = value
+					document.getElementById("song-letgo").innerHTML = value
+					document.getElementById("song-flip").innerHTML = value
+					document.getElementById("song-thirtyseven").innerHTML = value
+					document.getElementById("song-strained").innerHTML = value
+
+
+
+				}
+				else {
+					document.getElementById("result_password").innerHTML = "Wrong password"
+				}
+			} else {
+				document.getElementById("result_password").innerHTML = "Looks like it's not the time to do so..."
+			}
 		}
 
-		if (click === 5) {
-			achievement("assets/images/achievement50.jpg")
+
+		// BELL
+		// Events triggered on click
+
+		document.getElementById("imgClickAndChange").addEventListener('mousedown', e => {
+
+			document.getElementById('imgClickAndChange').classList.add('anim')
+			setTimeout(() => {
+				document.getElementById('imgClickAndChange').classList.remove('anim')
+			}, 1000);
+
+			play();
+			changeCursor();
+			changeImage();
+			impact();
+			showMenu();
+			current_hour = update_hour(current_hour)
+			display_hour();
+			hide_about()
+		});
+
+		// Events reset after mouse up
+
+		document.getElementById("imgClickAndChange").addEventListener('mouseup', e => {
+			resetCursor();
+			resetImage();
+			click = click + 1
+
+			if (click === 4) {
+				document.getElementById('youtube-video').style.display = "block";
+			}
+			if (click === 6) {
+				console.log(document.getElementById("song-buildup").style)
+				document.getElementById("song-buildup").style.display = "block";
+			}
+
+			if (click === 7) {
+				document.getElementById("song-945").style.display = "block";
+			}
+
+			if (click === 8) {
+				document.getElementById("song-satellite").style.display = "block";
+			}
+
+			if (click === 9) {
+				document.getElementById("song-onehundred").style.display = "block";
+			}
+
+			if (click === 10) {
+				document.getElementById("song-miles").style.display = "block";
+			}
+
+			if (click === 11) {
+				document.getElementById("song-letsgo").style.display = "block";
+			}
+
+			if (click === 12) {
+				document.getElementById("song-letgo").style.display = "block";
+			}
+
+			if (click === 13) {
+				document.getElementById("song-flip").style.display = "block";
+			}
+
+			if (click === 14) {
+				document.getElementById("song-thirtyseven").style.display = "block";
+			}
+
+			if (click === 15) {
+				document.getElementById("song-strained").style.display = "block";
+			}
+			if (click === 8) {
+				document.getElementById('youtube-video').style.display = "block";
+			}
+
+			if (click === 5) {
+				achievement("assets/images/achievement50.jpg")
+			}
+
+			if (click === 10) {
+				achievement("assets/images/achievement100.jpg")
+			}
+			if (click === 50) {
+				achievement("assets/images/achievement500.jpg")
+			}
+		})
+
+
+		// Switch songs
+
+		document.getElementById("song-buildup").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/LwgCbCX11GQ"
+			hide_about()
+		})
+		document.getElementById("song-945").addEventListener('mousedown', e => {
+			document.getElementById("clock").style.display = "block"
+		})
+		document.getElementById("song-satellite").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
+			hide_about()
+		})
+		document.getElementById("song-onehundred").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/54rR6hcvXHw"
+			hide_about()
+		})
+		document.getElementById("song-miles").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/MN87j1h1x-w"
+			hide_about()
+		})
+		document.getElementById("song-letsgo").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/KIwon8eIANw"
+			hide_about()
+		})
+		document.getElementById("song-letgo").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/DbGevmnbtLk"
+			hide_about()
+		})
+		document.getElementById("song-flip").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").style.display = "none"
+			document.getElementById("flip-image").style.display = "block"
+
+			setTimeout(function () {
+				document.getElementById("flip-image").style.display = "none"
+				document.getElementById("youtube-video-iframe").style.display = "block"
+
+			}, 3000);
+
+		})
+		document.getElementById("song-thirtyseven").addEventListener('mousedown', e => {
+			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/hJCW9YI2r0k"
+			hide_about()
+		})
+		document.getElementById("song-strained").addEventListener('mousedown', e => {
+			document.getElementById("password").style.display = "block"
+		})
+
+		function remove() {
+			$(temp).remove();
 		}
 
-		if (click === 10) {
-			achievement("assets/images/achievement100.jpg")
-		}
-		if (click === 50) {
-			achievement("assets/images/achievement500.jpg")
+		function achievement(filename) {
+			achievementSound.play();
+			$('<div id="temp" class="ani_div">' +
+				'<img src="' + filename + '" style="width:100%;height:100%">' + 'test' +
+				'</div>').appendTo(divEl);
+			setTimeout(function () {
+				remove()
+			}, 2950);
 		}
 	})
-
-
-	// Switch songs
-
-	document.getElementById("song-buildup").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/LwgCbCX11GQ"
-		hide_about()
-	})
-	document.getElementById("song-945").addEventListener('mousedown', e => {
-		document.getElementById("clock").style.display = "block"
-	})
-	document.getElementById("song-satellite").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
-		hide_about()
-	})
-	document.getElementById("song-onehundred").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/54rR6hcvXHw"
-		hide_about()
-	})
-	document.getElementById("song-miles").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/MN87j1h1x-w"
-		hide_about()
-	})
-	document.getElementById("song-letsgo").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/KIwon8eIANw"
-		hide_about()
-	})
-	document.getElementById("song-letgo").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/DbGevmnbtLk"
-		hide_about()
-	})
-	document.getElementById("song-flip").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").style.display = "none"
-		document.getElementById("flip-image").style.display = "block"
-
-		setTimeout(function () {
-			document.getElementById("flip-image").style.display = "none"
-			document.getElementById("youtube-video-iframe").style.display = "block"
-
-		}, 3000);
-
-	})
-	document.getElementById("song-thirtyseven").addEventListener('mousedown', e => {
-		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/hJCW9YI2r0k"
-		hide_about()
-	})
-	document.getElementById("song-strained").addEventListener('mousedown', e => {
-		document.getElementById("password").style.display = "block"
-	})
-
-	function remove() {
-		$(temp).remove();
-	}
-
-	function achievement(filename) {
-		achievementSound.play();
-		$('<div id="temp" class="ani_div">' +
-			'<img src="' + filename + '" style="width:100%;height:100%">' + 'test' +
-			'</div>').appendTo(divEl);
-		setTimeout(function () {
-			remove()
-		}, 2950);
-	}
 
 </script>
