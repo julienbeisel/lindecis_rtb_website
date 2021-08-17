@@ -423,14 +423,14 @@ img.gif {
 
 
 .btn {
-  color:inherit;
-    font-family:inherit;
-  font-size: inherit;
-  background: white;
+
+  color:white;
+  font-size:25 ; 
+  padding:5%;
+  font-family:"bell-mt";
+  background: #53b5e5;
   padding: 0.3rem 3.4rem;
-  border: 3px solid black;
   margin-right: 2.6rem;
-  box-shadow: 0 0 0 black;
   transition: all 0.2s;
 }
 

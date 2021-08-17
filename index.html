@@ -83,11 +83,13 @@
 		<div id="menu" class="menuContainer">
 			<div id="vinyl"><button
 					onclick="window.open('https://www.diggersfactory.com/fr/vinyl/244853/lindecis-ring-the-bell','_blank')"
-					class="btn" style="font-size:25 ; padding:5%">Vinyl</button></div>
+					class="btn" style="font-size:25 ; padding:5%">VINYL</button>
+			</div>
 			<div id="stream"><button onclick="window.open('http://hyperurl.co/lindecis','_blank')" class="btn"
-					style="font-size:25 ; padding:5%">Stream</button></div>
+					style="font-size:25 ; padding:5%">STREAM</button></div>
 			<div id="about"><button onclick="display_about()" class="btn"
-					style="font-size:25 ; padding:5%">About</button></div>
+					style="font-size:25 ; padding:5%">ABOUT</button>
+			</div>
 		</div>
 
 		<div id="youtube-video" class="youtube-embed">
@@ -134,51 +136,70 @@
 
 			<div id=" clock" class="window-body" style="font-size: 20;">
 					<div id="value-clock" style="font-size: 20;">00:00</div>
-					<input id="input-pswrd" type="text" style="display:none" />
-					<button id="input-button" onclick="check_result()">Password</button>
 				</div>
 			</div>
 
 
-			<div class="text-definition" id="about-display">
-				<p style="font-size: x-large;"><b>ring the bell</b></p>
-				<p><i>Inf</i>. to be just what is needed; to hit the spot. </p>
-				</br>
-				<p>This project started from beats videos, where I had the most fun in a period of time when
-					feeling inspired and motivated making music was a rare thing.</p>
-				<p>I put all my favorites since the pandemic blended together in a 16 minutes mix, oscillating
-					between short and longer pieces. It went from the idea to the final product in the shortest
-					amount of time, and it was exactly what I needed, what I was looking for: something that was
-					particularly effective, memorable, and familiar, something that just ring the bell.</p>
-				</br>
-				<p>It went from the idea to the final product in the shortest amount of time, and it was exactly
-					what I needed, what I was looking for: something that was particularly effective and
-					memorable, something that just ring the bell.</p>
+			<div id="password" class="window" style="
+			display:none;
+			position: absolute;
+			left: 15%;
+			top: 30%;
+			width:15vw;
+			transform: translate(-50%, -50%);
+			font-size: 20;">
+				<div class="title-bar">
+					<div class="title-bar-text"">Password</div>
+				</div>
+	
+				<div class=" window-body" style="font-size: 20;">
+						<input id="input-pswrd" type="text" />
+
+						<button id="input-button" onclick="check_result()">Password</button>
+						<div id="result_password"></div>
+					</div>
+				</div>
 
 
-				</br>
-				<p>All tracks produced and mixed by <a href="https://www.instagram.com/l_indecis/"
-						target="_blank">L’INDÉCIS</a>.</p>
-				<p>Cover by <a href="https://www.instagram.com/l_indecis/" target="_blank">L’INDÉCIS</a> using
-					an original analog picture as background. Thanks to <a
-						href="https://www.instagram.com/arjenvandoezelaar/" target="_blank">ARJEN</a> for the
-					scan.</p>
-				<p>Thanks to <a href="https://www.instagram.com/sadtoi_/" target="_blank">SADTOI</a> who
-					recorded bass on BUILDUP, 9:45, SATELITTE, ONEHUNDRED, STRAINED, and
-					LETSGO! that he also co-produced.</p>
-				<p>Thanks to <a href="https://www.instagram.com/kountkoal/" target="_blank">THE KOUNT</a> for
-					letting me use his synth video in SATELITTE.</p>
-				<p>Thanks to <a href="https://www.instagram.com/marymakesmusic/" target="_blank">MARY</a> for
-					letting me use an instagram video of her singing in LETGO.</p>
-				<p>Thanks to my brother <a href="https://www.instagram.com/iksolar/" target="_blank">SOLARIK</a>
-					who recorded guitars and co-produced MILES, as long to <a
-						href="https://www.instagram.com/cocabonamusic/" target="_blank">COCABONA</a>
-					who recorded bass.</p>
-				<p>Thanks to <a href="https://www.instagram.com/nymanobeats/" target="_blank">NYMANO</a> who
-					created this website</p>
+				<div class="text-definition" id="about-display">
+					<p style="font-size: x-large;"><b>ring the bell</b></p>
+					<p><i>Inf</i>. to be just what is needed; to hit the spot. </p>
+					</br>
+					<p>This project started from beats videos, where I had the most fun in a period of time when
+						feeling inspired and motivated making music was a rare thing.</p>
+					<p>I put all my favorites since the pandemic blended together in a 16 minutes mix, oscillating
+						between short and longer pieces. It went from the idea to the final product in the shortest
+						amount of time, and it was exactly what I needed, what I was looking for: something that was
+						particularly effective, memorable, and familiar, something that just ring the bell.</p>
+					</br>
+					<p>It went from the idea to the final product in the shortest amount of time, and it was exactly
+						what I needed, what I was looking for: something that was particularly effective and
+						memorable, something that just ring the bell.</p>
+
+
+					</br>
+					<p>All tracks produced and mixed by <a href="https://www.instagram.com/l_indecis/"
+							target="_blank">L’INDÉCIS</a>.</p>
+					<p>Cover by <a href="https://www.instagram.com/l_indecis/" target="_blank">L’INDÉCIS</a> using
+						an original analog picture as background. Thanks to <a
+							href="https://www.instagram.com/arjenvandoezelaar/" target="_blank">ARJEN</a> for the
+						scan.</p>
+					<p>Thanks to <a href="https://www.instagram.com/sadtoi_/" target="_blank">SADTOI</a> who
+						recorded bass on BUILDUP, 9:45, SATELITTE, ONEHUNDRED, STRAINED, and
+						LETSGO! that he also co-produced.</p>
+					<p>Thanks to <a href="https://www.instagram.com/kountkoal/" target="_blank">THE KOUNT</a> for
+						letting me use his synth video in SATELITTE.</p>
+					<p>Thanks to <a href="https://www.instagram.com/marymakesmusic/" target="_blank">MARY</a> for
+						letting me use an instagram video of her singing in LETGO.</p>
+					<p>Thanks to my brother <a href="https://www.instagram.com/iksolar/" target="_blank">SOLARIK</a>
+						who recorded guitars and co-produced MILES, as long to <a
+							href="https://www.instagram.com/cocabonamusic/" target="_blank">COCABONA</a>
+						who recorded bass.</p>
+					<p>Thanks to <a href="https://www.instagram.com/nymanobeats/" target="_blank">NYMANO</a> who
+						created this website</p>
+				</div>
+
 			</div>
-
-		</div>
 </body>
 
 </html>
@@ -297,38 +318,41 @@
 
 		let txt_to_display = String(hours).padStart(2, "0") + ":" + minutes
 
-		if (current_hour == 60 * 9 + 45) {
-			document.getElementById("input-pswrd").style.display = 'block'
-			document.getElementById("input-button").style.display = 'block'
-		} else {
-			document.getElementById("input-pswrd").style.display = 'none'
-			document.getElementById("input-button").style.display = 'none'
-		}
+
 		document.getElementById("value-clock").innerHTML = txt_to_display
 
 	}
 
 	function check_result() {
 
-		if (document.getElementById("input-pswrd").value == 261093) {
-
-			let value = "contactme@gmail.com"
-
-			document.getElementById("song-buildup").innerHTML = value
-			document.getElementById("song-945").innerHTML = value
-			document.getElementById("song-satellite").innerHTML = value
-			document.getElementById("song-onehundred").innerHTML = value
-			document.getElementById("song-miles").innerHTML = value
-			document.getElementById("song-letsgo").innerHTML = value
-			document.getElementById("song-letgo").innerHTML = value
-			document.getElementById("song-flip").innerHTML = value
-			document.getElementById("song-thirtyseven").innerHTML = value
-			document.getElementById("song-strained").innerHTML = value
+		if (current_hour == 60 * 9 + 45) {
+			if (document.getElementById("input-pswrd").value == 261093) {
 
 
+				let value = "contactme@gmail.com"
 
+				document.getElementById("song-buildup").innerHTML = value
+				document.getElementById("song-945").innerHTML = value
+				document.getElementById("song-satellite").innerHTML = value
+				document.getElementById("song-onehundred").innerHTML = value
+				document.getElementById("song-miles").innerHTML = value
+				document.getElementById("song-letsgo").innerHTML = value
+				document.getElementById("song-letgo").innerHTML = value
+				document.getElementById("song-flip").innerHTML = value
+				document.getElementById("song-thirtyseven").innerHTML = value
+				document.getElementById("song-strained").innerHTML = value
+
+
+
+			}
+			else {
+				document.getElementById("result_password").innerHTML = "Wrong password"
+			}
+		} else {
+			document.getElementById("result_password").innerHTML = "Wrong hour..."
 		}
 	}
+
 
 	// BELL
 	// Events triggered on click
@@ -450,5 +474,7 @@
 		document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/hJCW9YI2r0k"
 		hide_about()
 	})
-	document.getElementById("song-strained").addEventListener('mousedown', e => { })
+	document.getElementById("song-strained").addEventListener('mousedown', e => {
+		document.getElementById("password").style.display = "block"
+	})
 </script>
