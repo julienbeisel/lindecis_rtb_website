@@ -24,6 +24,95 @@ body {
   position: relative;
 }
 
+.loadingScreen{
+  position: absolute;
+  z-index: 1001;
+  width: 100vw;
+  height: 100vh;
+  background-color: #53b5e5;
+  animation: fadeOut ease 4s forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation: fadeOut ease 4s forwards;
+  pointer-events: none;
+
+
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display:none;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display:none;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display:none;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display:none;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display:none;
+}}
+
+
+.imgLoaderContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50vh;
+  height: 50vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 
 .mainContainer {
   background-image: url("assets/images/sitebackgroundnobell.jpg");
