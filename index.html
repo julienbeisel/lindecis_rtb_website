@@ -59,7 +59,7 @@
 				<p>THIRTYSEVEN</p>
 			</div>
 			<div id="song-strained">
-				<p><img class="imgleaf" src="assets/images/audio_file.png" /></p>
+				<p><img class="imgleaf" src="assets/images/file_locked.png" /></p>
 				<p>STRAINED</p>
 			</div>
 		</div>
@@ -127,7 +127,7 @@
 		position: absolute;
 		left: 90%;
 		top: 20%;
-		width:15vw;
+		width:8vw;
 		transform: translate(-50%, -50%);
 		font-size: 20;">
 			<div class="title-bar">
@@ -154,8 +154,8 @@
 	
 				<div class=" window-body" style="font-size: 12;">
 						<input id="input-pswrd" type="text" />
-
-						<button id="input-button" onclick="check_result()">Password</button>
+						</br>
+						<button id="input-button" onclick="check_result()">OK</button>
 						<div id="result_password"></div>
 					</div>
 				</div>
@@ -349,7 +349,7 @@
 				document.getElementById("result_password").innerHTML = "Wrong password"
 			}
 		} else {
-			document.getElementById("result_password").innerHTML = "Wrong hour..."
+			document.getElementById("result_password").innerHTML = "Looks like it's not the time to do so..."
 		}
 	}
 

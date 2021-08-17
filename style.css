@@ -298,7 +298,7 @@ img.gif {
 }
 
 .imgleaf{
-  width:2vw; 
+  width:2vh; 
   margin:auto;
   display:block;
 }
@@ -431,6 +431,7 @@ img.gif {
   background: #53b5e5;
   padding: 0.3rem 3.4rem;
   margin-right: 2.6rem;
+  box-shadow: #556572;
   transition: all 0.2s;
 }
 
@@ -440,11 +441,11 @@ img.gif {
 
 .btn:hover {
   cursor: url('assets/images/handCursorV2.cur'), auto;
-  box-shadow: 0.4rem 0.4rem 0 black;
+  box-shadow: 0.4rem 0.4rem 0 #556572;
   transform: translate(-0.4rem, -0.4rem);
 }
 
 .btn:active {
-  box-shadow: 0 0 0 black;
+  box-shadow: 0 0 0 #556572;
   transform: translate(0, 0);
 }
