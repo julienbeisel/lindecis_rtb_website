@@ -449,3 +449,25 @@ img.gif {
   box-shadow: 0 0 0 #556572;
   transform: translate(0, 0);
 }
+
+.ach-area {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow-y: hidden;
+}
+
+.ani_div {
+  width: 20vw;
+  height: 8vw;
+  background-color: #30302e;
+  line-height: 100px;
+  animation: 3s ease 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  0% {transform: translateY(100%);}
+  10% {transform: translateY(0%);}
+  90% {transform: translateY(0%);}
+  100% {transform: translateY(100%);}
+}

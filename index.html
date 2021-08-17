@@ -64,6 +64,9 @@
 			</div>
 		</div>
 
+		<div class="ach-area">
+		</div>
+
 		<div class="imgContainer">
 
 
@@ -203,8 +206,13 @@
 </body>
 
 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
 	var audio = new Audio('assets/sounds/bellringing_trimmed.mp3');
+	var achievementSound = new Audio('assets/sounds/achievement.wav');
+
+	var divEl = $('.ach-area');
+
 	audio.preload = "auto"
 
 	var click = 0;
@@ -427,6 +435,17 @@
 		if (click === 8) {
 			document.getElementById('youtube-video').style.display = "block";
 		}
+
+		if (click === 5) {
+			achievement("assets/images/achievement50.jpg")
+		}
+
+		if (click === 10) {
+			achievement("assets/images/achievement100.jpg")
+		}
+		if (click === 50) {
+			achievement("assets/images/achievement500.jpg")
+		}
 	})
 
 
@@ -477,4 +496,19 @@
 	document.getElementById("song-strained").addEventListener('mousedown', e => {
 		document.getElementById("password").style.display = "block"
 	})
+
+	function remove() {
+		$(temp).remove();
+	}
+
+	function achievement(filename) {
+		achievementSound.play();
+		$('<div id="temp" class="ani_div">' +
+			'<img src="' + filename + '" style="width:100%;height:100%">' + 'test' +
+			'</div>').appendTo(divEl);
+		setTimeout(function () {
+			remove()
+		}, 2950);
+	}
+
 </script>
