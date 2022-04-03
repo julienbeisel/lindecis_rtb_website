@@ -86,12 +86,9 @@
 
 
 		<div id="menu" class="menuContainer">
-			<div id="vinyl"><button
-					onclick="window.open('https://www.diggersfactory.com/fr/vinyl/244853/lindecis-ring-the-bell','_blank')"
-					class="btn" style="font-size:25 ; padding:5%">VINYL</button>
+			<div id="vinyl"><button onclick="window.open('http://hyperurl.co/lindecisrtb','_blank')" class="btn"
+					style="font-size:25 ; padding:5%">VINYL/STREAM</button>
 			</div>
-			<div id="stream"><button onclick="window.open('http://hyperurl.co/lindecis','_blank')" class="btn"
-					style="font-size:25 ; padding:5%">STREAM</button></div>
 			<div id="about"><button onclick="display_about()" class="btn"
 					style="font-size:25 ; padding:5%">ABOUT</button>
 			</div>
@@ -111,7 +108,7 @@
 				</div>
 				<div class="window-body" style="width:98%;height:100%">
 					<iframe id="youtube-video-iframe" class="youtube-video"
-						src="https://www.youtube.com/embed/hJCW9YI2r0k" title="YouTube video player" frameborder="0"
+						src="https://www.youtube.com/embed/JR3aIpJNpco" title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
 
@@ -213,7 +210,6 @@
 
 
 <script>
-
 	$(document).ready(function () {
 
 
@@ -259,8 +255,7 @@
 
 			if (document.getElementById("about-display").style.display === "none") {
 				document.getElementById("about-display").style.display = "block";
-			}
-			else {
+			} else {
 				document.getElementById("about-display").style.display = "none";
 			}
 
@@ -320,13 +315,11 @@
 
 			if (click === 2) {
 				document.getElementById('vinyl').style.display = "block";
-				document.getElementById('stream').style.display = "block";
 				document.getElementById('about').style.display = "block";
 
 				let opacity = 1
 
 				document.getElementById('vinyl').style.opacity = opacity;
-				document.getElementById('stream').style.opacity = opacity;
 				document.getElementById('about').style.opacity = opacity;
 			}
 
@@ -448,30 +441,36 @@
 		// Switch songs
 
 		document.getElementById("song-buildup").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/LwgCbCX11GQ"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/LwgCbCX11GQ"
 			hide_about()
 		})
 		document.getElementById("song-945").addEventListener('mousedown', e => {
 			document.getElementById("clock").style.display = "block"
 		})
 		document.getElementById("song-satellite").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/_zs9k7oVhrY"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/_zs9k7oVhrY"
 			hide_about()
 		})
 		document.getElementById("song-onehundred").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/54rR6hcvXHw"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/54rR6hcvXHw"
 			hide_about()
 		})
 		document.getElementById("song-miles").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/MN87j1h1x-w"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/MN87j1h1x-w"
 			hide_about()
 		})
 		document.getElementById("song-letsgo").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/KIwon8eIANw"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/KIwon8eIANw"
 			hide_about()
 		})
 		document.getElementById("song-letgo").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/DbGevmnbtLk"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/DbGevmnbtLk"
 			hide_about()
 		})
 		document.getElementById("song-flip").addEventListener('mousedown', e => {
@@ -486,7 +485,8 @@
 
 		})
 		document.getElementById("song-thirtyseven").addEventListener('mousedown', e => {
-			document.getElementById("youtube-video-iframe").src = "https://www.youtube.com/embed/hJCW9YI2r0k"
+			document.getElementById("youtube-video-iframe").src =
+				"https://www.youtube.com/embed/hJCW9YI2r0k"
 			hide_about()
 		})
 		document.getElementById("song-strained").addEventListener('mousedown', e => {
@@ -514,16 +514,13 @@
 
 
 
-				}
-				else {
+				} else {
 					document.getElementById("result_password").innerHTML = "Wrong password"
 				}
 			} else {
-				document.getElementById("result_password").innerHTML = "Looks like it's not the time to do so..."
+				document.getElementById("result_password").innerHTML =
+					"Looks like it's not the time to do so..."
 			}
 		}
 	})
-
-
-
 </script>
